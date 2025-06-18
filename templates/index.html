@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quadratic Equation Solver</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        input { padding: 8px; margin: 5px; }
+        .error { color: red; }
+        .result { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Quadratic Equation Solver</h1>
+    <form method="POST">
+        <label>a:</label>
+        <input type="text" name="a" required><br>
+        <label>b:</label>
+        <input type="text" name="b" required><br>
+        <label>c:</label>
+        <input type="text" name="c" required><br>
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+        <p class="result">Root 1: {{ result.root1 }}</p>
+        <p class="result">Root 2: {{ result.root2 }}</p>
+    {% endif %}
+</body>
+</html>
